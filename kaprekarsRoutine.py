@@ -4,16 +4,21 @@ def in1():
   va1 = x #stores value for the first input
   return val , va1
 
-  
+
 val , va1 = in1()
 
 if len(val) != 4:
-  print("Please enter a 4 digit number")
+  print("Please enter a 4 digit number") #checks if the digit is 4 digit or not
   in1()
+elif len(set(val)) == 1: #converts the str value to a set, convert the string into a set(). Since a set only keeps unique elements, any 4-digit number with identical digits (like "1111" or "7777") will compress down to a set with a length of 1
+    print("Invalid: Number must have at least two distinct digits.")
+    in1()
+
 count = 1 #first iteration number
 
 num1 = 0 #placeholder so it doesn't throw an error
 while num1 != 1:
+  val = str(val).zfill(4) #uses zfill function (pads the input with 0 as leading 0's to conform with Kaprekar's constant algorithm) ; The zfill() method adds zeros (0) at the beginning of the string, until it reaches the specified length.
   num = [int(x) for x in val] #converts string to list of integers
   num.sort() #sorts integers in a decending order
   num_neg= sorted(num, reverse=True) #sorts number in ascending order
@@ -31,3 +36,10 @@ while num1 != 1:
       print(num1, f"lowest {val2}, highest {val1}, iteration{count}")
       print(f"6174 i.e. Kaperkar's Constant found \n it took {count} number of tries for the input {va1}") #if kaperkar's constant is found it outputs how many iteration it took to find the value
       break
+
+
+
+
+
+
+
