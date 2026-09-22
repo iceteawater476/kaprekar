@@ -2,6 +2,7 @@ This is a simple python program which finds the kaprekar's routine for a 4 digit
 *given the input is properly given for a digit kaprekar's routine*
 to see it in action visit this google collab notebook:
   https://colab.research.google.com/drive/1-FGoLsGIfv9R2RrvwoEewDzWHClevQeU?usp=sharing
+
 How the Routine Works (Step-by-Step)
   1. Pick a number: Choose any 4-digit number that has at least two distinct digits (leading zeros like 0042 are allowed).
 
